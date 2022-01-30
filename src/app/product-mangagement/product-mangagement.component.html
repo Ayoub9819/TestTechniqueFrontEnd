@@ -1,0 +1,30 @@
+<div *ngIf="products.length >0; else noProducts" class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 style="color: #563d7c;">Product List</h2>
+
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+            <tr style="color: #563d7c;">
+              <th scope="col">Product Name</th>
+              <th scope="col">quantity</th>
+              <th scope="col">description</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr *ngFor="let product of products;" style="color: #563d7c;">
+              <td>{{product.productName}}</td>
+              <td>{{product.quantity}}</td>
+              <td>{{product.description}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <ng-template #noProducts>
+    <div class="center">
+      <h1 style="color: #563d7c;font-family: Georgia, 'Times New Roman', Times, serif;">{{errorMessage}}</h1>
+    </div>
+    </ng-template>

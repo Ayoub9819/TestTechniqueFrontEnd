@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 style="color: #563d7c;">Category List</h2>
+
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <tbody>
+          <tr *ngFor="let category of categories;" style="color: #563d7c;">
+              <td>{{category.categoryName}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-primary" routerLink="/products/{{category.id}}" style="background-color: #563d7c;">Display products</button>
+              <!--<button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>-->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
